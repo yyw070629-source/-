@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채원석학원</title>
+
+<style>
+/* ================= 기본 설정 ================= */
+body{
+    margin:0;
+    font-family: 'Pretendard', sans-serif;
+    background:#f5f6f8;
+}
+a{text-decoration:none;color:inherit;}
+.hidden{display:none;}
+
+/* ================= 상단 로고 영역 ================= */
+.top-header{
+    background:white;
+    padding:20px 40px;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid #eee;
+}
+.logo-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2b5876,#4e4376);
+    margin-right:15px;
+}
+.logo-text{
+    font-size:28px;
+    font-weight:700;
+}
+
+/* ================= 네비게이션 ================= */
+.nav{
+    background:#1e1e2f;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    gap:40px;
+    font-weight:500;
+}
+.nav div{
+    cursor:pointer;
+    transition:0.3s;
+}
+.nav div:hover{
+    color:#00c3ff;
+}
+
+/* ================= 메인 광고 영역 ================= */
+.main-container{
+    display:flex;
+    padding:30px 40px;
+    gap:30px;
+}
+
+.ad-slider{
+    flex:3;
+    height:350px;
+    border-radius:15px;
+    overflow:hidden;
+    position:relative;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    color:white;
+    font-weight:700;
+    transition:0.5s;
+}
+
+.slide1{background:linear-gradient(135deg,#2b5876,#4e4376);}
+.slide2{background:linear-gradient(135deg,#ff512f,#dd2476);}
+.slide3{background:linear-gradient(135deg,#11998e,#38ef7d);}
+
+.side-panel{
+    flex:1;
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.side-panel button{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    background:#2b5876;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+.side-panel button:hover{
+    background:#4e4376;
+}
+
+/* ================= 페이지 공통 ================= */
+.page{
+    padding:50px 40px;
+}
+
+/* ================= 학원소개 ================= */
+.intro-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    line-height:1.8;
+}
+
+/* ================= 선생님 페이지 ================= */
+.teacher-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+}
+.teacher-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+.teacher-card:hover{
+    transform:translateY(-5px);
+}
+.teacher-img{
+    width:100%;
+    height:200px;
+    background:#ddd;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+</style>
+</head>
+<body>
+
+<!-- ================= 상단 로고 ================= -->
+<div class="top-header">
+    <div class="logo-circle"></div>
+    <div class="logo-text">채원석학원</div>
+</div>
+
+<!-- ================= 네비게이션 ================= -->
+<div class="nav">
+    <div onclick="showPage('home')">학원소개</div>
+    <div onclick="showPage('teachers')">학원선생님</div>
+    <div>모의고사</div>
+    <div>내신</div>
+    <div>입시정보</div>
+</div>
+
+<!-- ================= 홈 화면 ================= -->
+<div id="home" class="page">
+
+    <div class="main-container">
+
+        <!-- 광고 슬라이드 -->
+        <div class="ad-slider">
+            <div class="slide slide1">2026 수능 대비 전략반 모집</div>
+            <div class="slide slide2">내신 1등급 완성 프로젝트</div>
+            <div class="slide slide3">모의고사 실전 훈련반</div>
+        </div>
+
+        <!-- 우측 로그인 영역 -->
+        <div class="side-panel">
+            <button>로그인</button>
+            <button>회원가입</button>
+            <button>학원 위치</button>
+        </div>
+
+    </div>
+
+    <!-- 학원 소개글 -->
+    <div class="intro-box">
+        <h2>채원석학원 소개</h2>
+        <p>
+        채원석학원은 전략적 사고를 기반으로 한 학습 시스템을 제공합니다.
+        단순 문제풀이가 아닌 출제자의 의도를 파악하는 사고 훈련을 통해
+        내신과 수능을 동시에 잡는 교육을 실현합니다.
+        </p>
+    </div>
+
+</div>
+
+<!-- ================= 선생님 페이지 ================= -->
+<div id="teachers" class="page hidden">
+    <h2>채원석학원 선생님</h2>
+    <div class="teacher-grid">
+        <div class="teacher-card">
+            <div class="teacher-img"></div>
+            <h3>채원석</h3>
+            <p>수학 전략 전문가</p>
+        </div>
+        <div class="teacher-card">
+            <div class="teacher-img"></div>
+            <h3>김OO</h3>
+            <p>영어 독해 전문가</p>
+        </div>
+        <div class="teacher-card">
+            <div class="teacher-img"></div>
+            <h3>박OO</h3>
+            <p>과학 개념 완성</p>
+        </div>
+        <div class="teacher-card">
+            <div class="teacher-img"></div>
+            <h3>이OO</h3>
+            <p>국어 논리 분석</p>
+        </div>
+    </div>
+</div>
+
+<script>
+/* ================= 페이지 전환 ================= */
+function showPage(pageId){
+    document.getElementById('home').classList.add('hidden');
+    document.getElementById('teachers').classList.add('hidden');
+    document.getElementById(pageId).classList.remove('hidden');
+}
+
+/* ================= 광고 슬라이드 ================= */
+let slides=document.querySelectorAll('.slide');
+let current=0;
+
+function showSlide(){
+    slides.forEach((slide,index)=>{
+        slide.style.opacity = (index===current)? "1":"0";
+    });
+    current = (current+1)%slides.length;
+}
+setInterval(showSlide,3000);
+showSlide();
+</script>
+
+</body>
+</html>
